@@ -72,7 +72,7 @@ func slice*[T](arr: openArray[T], start: Natural, len: Positive): VSlice[T] {.in
 func slice*[T](arr: openArray[T]): VSlice[T] {.inline.} =
     arr.slice(0, arr.len)
 
-func slice*[T](arr: openArray[T], s: Slice[T]): VSlice[T] {.inline.} =
+func slice*[T](arr: openArray[T], s: Slice[int]): VSlice[T] {.inline.} =
     slice(arr, s.a, (s.b - s.a) + 1)
 
 func slice*(str: string, start: Natural, len: Positive): StringVSlice {.inline.} =
