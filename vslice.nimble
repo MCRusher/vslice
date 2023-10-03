@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.0"
+version       = "1.1.0"
 author        = "MCRusher"
 description   = "Allow slicing (and reslicing) arrays/seqs/strings without any new allocations"
 license       = "MIT"

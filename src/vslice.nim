@@ -33,6 +33,13 @@ proc `[]`*(svs: StringVSlice, s: Slice[int]): StringVSlice {.inline, noSideEffec
     ## reslice a string slice
     VSlice[char](svs)[s].StringVSlice
 
+proc `[]`*[T](vs: VSlice[T], i: int): lent T {.inline, noSideEffect.} =
+    assert i < vs.len
+
+    vs.data[i]
+
+proc `[]`*(svs: StringVSlice, i: int): lent char {.inline, noSideEffect.} = svs.toVSlice()[i]
+
 iterator items*[T](vs: VSlice[T]): T {.inline.} =
     for i in 0..vs.len-1:
         yield vs.data[i]

@@ -9,6 +9,7 @@ test "test full slice":
     doAssert slice.len == values.len
     doAssert $slice == "&[true, false, true, false]"
     doAssert slice == values
+    doAssert slice[1] == false
 
 test "test partial slice":
     let values = [1, 2, 3, 4]
@@ -34,6 +35,7 @@ test "test full slice of string":
     doAssert slice.len == value.len
     doAssert $slice == value
     doAssert slice == value
+    doAssert slice[8] == 'a'
 
 test "test partial slice of string":
     let value = "this is a test"
